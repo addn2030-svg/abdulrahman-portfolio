@@ -1,3 +1,4 @@
+# Public portfolio deployment only. Never deploy private agent content.
 name: Deploy Expert Portfolio
 
 on:
