@@ -36,6 +36,15 @@ For all future content or design changes:
 
 Professional facts should come from the latest user-approved CV and verified project evidence. When sources conflict, do not guess; flag the discrepancy for review.
 
+## Image assets
+
+- `assets/rehabilitation-workspace.jpg` is an AI-generated editorial visualization and is labeled as such on the site. Replace it with an approved, user-owned workplace photograph when available.
+- `assets/institutions/royal-commission-hospital-jubail.jpg` is a public image discovered through Wikimedia Commons.
+- `assets/institutions/king-fahd-specialist-hospital-dammam.jpg` is a public historical image from an institutional profile source.
+- Institution images are contextual career-history visuals only; they do not imply endorsement.
+- The preferred personal portrait filename is `assets/abdulrahman-howsawy.jpg`. Add it only after the user supplies or explicitly approves the photograph.
+- Do not add clinical workplace images containing identifiable patients, records, screens, wristbands, or other protected information.
+
 ## AI collaborators
 
 AI tools may read this public repository freely. Write access should be granted only through an authenticated GitHub connection, and AI-generated changes should normally arrive as Pull Requests for human review.
