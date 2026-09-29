@@ -10,15 +10,51 @@ window.PORTFOLIO_LINKS = {
 
 (function () {
   const links = window.PORTFOLIO_LINKS || {};
-  document.querySelectorAll("[data-social]").forEach((el) => {
-    const key = el.getAttribute("data-social");
+
+  document.querySelectorAll("[data-social]").forEach((element) => {
+    const key = element.getAttribute("data-social");
     const url = (links[key] || "").trim();
     if (!url) {
-      el.hidden = true;
+      element.hidden = true;
       return;
     }
-    el.href = url;
-    el.target = "_blank";
-    el.rel = "noopener noreferrer";
+    element.href = url;
+    element.target = "_blank";
+    element.rel = "noopener noreferrer";
   });
+
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+
+  const toggle = document.querySelector(".menu-toggle");
+  const navigation = document.getElementById("nav-links");
+  if (toggle && navigation) {
+    toggle.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "إغلاق القائمة" : "فتح القائمة");
+    });
+    navigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navigation.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const revealItems = document.querySelectorAll(".reveal");
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("visible"));
+  } else {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -30px" });
+    revealItems.forEach((item) => observer.observe(item));
+  }
 })();
