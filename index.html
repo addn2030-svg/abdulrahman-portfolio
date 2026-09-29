@@ -11,7 +11,18 @@
   <nav>
     <div class="container nav-inner">
       <a class="brand" href="#top">ABH / Expert Portfolio</a>
-      <div class="nav-links">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <div class="nav-links" id="primary-nav">
         <a href="#profile">Profile</a>
         <a href="#expertise">Expertise</a>
         <a href="#services">Services</a>
@@ -391,6 +402,15 @@
           <h2>Connect</h2>
           <p>For professional collaboration, rehabilitation innovation, clinical education, healthcare AI, service development, or operational improvement.</p>
         </div>
+        <div class="contact-card">
+          <div>
+            <h3>Get in touch</h3>
+            <p class="note">For collaboration, clinical education, speaking, or service and scheduling enquiries, reach out directly.</p>
+            <p class="note contact-email" hidden>Email: <a data-contact="email"></a></p>
+          </div>
+          <a class="btn primary" data-contact="primary" href="#connect">Get in touch</a>
+        </div>
+        <h3 class="socials-title">Elsewhere</h3>
         <div class="socials">
           <a data-social="github">GitHub</a>
           <a data-social="linkedin">LinkedIn</a>
